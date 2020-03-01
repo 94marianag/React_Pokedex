@@ -22,13 +22,8 @@ class Profile extends Component {
                 <img alt={""} src={p.sprites.front_shiny} />
                 <img alt={""} src={p.sprites.back_shiny} />
                 <br/>
-                <label>Male</label>
-                <img alt={"Female"} src={p.sprites.front_female} />
-                <img alt={"Female"} src={p.sprites.back_female} />
-                <img alt={"Female"} src={p.sprites.front_shiny_female} />
-                <img alt={"Female"} src={p.sprites.back_shiny_female} />
-                <label>Female</label>
-
+                <img alt={""} src={p.sprites.front_female} />
+                <img alt={""} src={p.sprites.back_female} />
               </Row>
             ))}
           </Container>

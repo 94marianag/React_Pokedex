@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import {Row, Col, Container, Button} from "reactstrap"
+import {Row, Col, Container, Button, Alert} from "reactstrap"
 
 class Pokedex extends Component {
-
     render(){        
         const {pokemons} = this.props
         return <Container>
+            <h3>Mi Pokedex</h3>
             {
                 pokemons.map(p => (
                     <Row>
@@ -16,17 +16,6 @@ class Pokedex extends Component {
                             <ul>
                                 <li>Id: {p.id}</li>
                                 <li>Name: {p.name}</li>
-                                <li>
-                                    <Button  
-                                    color="dark"
-                                    onClick = {() => {
-                                        
-                                        console.log("Viendo perfil..."+p.name)
-                                        
-                                     }}
-                                    
-                                    >View</Button>
-                                </li>
                                 <br/>
                                 <li>
                                     <Button 
@@ -35,6 +24,10 @@ class Pokedex extends Component {
                                         var i = pokemons.indexOf( p );
                                         pokemons.splice( i, 1 );
                                         console.log(pokemons)
+                                        console.log("Has borrado " + p.name)
+                                        //return window.location.reload()
+                                    }}
+                                    onChange = {() => {   
                                     }}
                                     >Delete</Button>
                                 </li>

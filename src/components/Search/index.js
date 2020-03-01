@@ -3,7 +3,6 @@ import {Form, FormGroup, Label, Input, Container, Row, Col, Button, Alert} from 
 import  * as yup from "yup";
 import {getPokemon} from "../../services/pokemonServer"
 import Pokemon from "./Pokemon"
-import Profile from '../Profile';
 
 class Search extends Component {
     constructor(props){

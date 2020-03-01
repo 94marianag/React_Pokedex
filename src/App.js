@@ -26,19 +26,18 @@ class App extends Component {
     })
   }
 
-  deletePokemon = (pokemon) => {
-    this.state.pokemons.pop(pokemon)
-    this.setState({
-      pokemons: this.state.pokemons
-    })
-  }
+  onChange = (e) => {
+    const name = e.target.value
+    this.setState({name})
+}
+  
 
   render(){
-    return <Router>
+    return <Router >
       <Menu />
-      <Container>
+      <Container id="rout">
       <Row>
-        <Col md="2"></Col>
+        <Col md="2" ></Col>
         <Col md="8">
           <Switch>
             <Route path="/pokedex">
@@ -47,7 +46,7 @@ class App extends Component {
 
             <Route path="/profile" >
             <Profile pokemons = {this.state.pokemons}
-            deletePokemon ={this.deletePokemon}
+                      onChange={this.onChange}
              />
             </Route>
 
