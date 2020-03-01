@@ -3,7 +3,7 @@ import {Form, FormGroup, Label, Input, Container, Row, Col, Button, Alert} from 
 import  * as yup from "yup";
 import {getPokemon} from "../../services/pokemonServer"
 import Pokemon from "./Pokemon"
-import Profile from "../../components/Profile/index"
+import Profile from '../Profile';
 
 class Search extends Component {
     constructor(props){
@@ -87,12 +87,8 @@ class Search extends Component {
             <Pokemon pokemon={this.state.pokemon} 
             catchPokemon = {this.props.catchPokemon}
             />
-             }
-             {
-                this.state.pokemon &&
-                 <Profile pokemon={this.state.pokemon}/>
-             }
-             
+            }
+ 
         </Container>
     }
 }

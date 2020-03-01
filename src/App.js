@@ -25,6 +25,14 @@ class App extends Component {
       pokemons: this.state.pokemons
     })
   }
+
+  deletePokemon = (pokemon) => {
+    this.state.pokemons.pop(pokemon)
+    this.setState({
+      pokemons: this.state.pokemons
+    })
+  }
+
   render(){
     return <Router>
       <Menu />
@@ -37,7 +45,11 @@ class App extends Component {
               <Pokedex pokemons = {this.state.pokemons}/>
             </Route>
 
-            <Route path="/profile" component={Profile} />
+            <Route path="/profile" >
+            <Profile pokemons = {this.state.pokemons}
+            deletePokemon ={this.deletePokemon}
+             />
+            </Route>
 
             <Route path="/" >
             <Search catchPokemon= {this.catchPokemon}/>
