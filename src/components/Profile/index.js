@@ -12,7 +12,8 @@ class Profile extends Component {
     };
 
     render(){
-        const {name, id, sprites} = this.props.pokemon
+        const {pokemons} = this.props
+        const {name, id, sprites} = this.props.pokemons
         return <Row>
             <Col md={8}>
             <img
