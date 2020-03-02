@@ -26,12 +26,14 @@ class App extends Component {
     })
   }
 
-  onChange = (e) => {
-    const name = e.target.value
-    this.setState({name})
-}
+  deletePokemon = (pokemon) =>{
+    var index = pokemon.index;
+    this.state.pokemons.splice(index,1);
+    this.setState({
+      pokemons: this.state.pokemons
+    })    
+  }
   
-
   render(){
     return <Router >
       <Menu />
@@ -41,12 +43,13 @@ class App extends Component {
         <Col md="8">
           <Switch>
             <Route path="/pokedex">
-              <Pokedex pokemons = {this.state.pokemons}/>
+              <Pokedex pokemons = {this.state.pokemons}
+              deletePokemon={this.deletePokemon}/>
             </Route>
 
             <Route path="/profile" >
             <Profile pokemons = {this.state.pokemons}
-                      onChange={this.onChange}
+                      //deletePokemon={this.deletePokemon}
              />
             </Route>
 

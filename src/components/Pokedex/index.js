@@ -21,13 +21,12 @@ class Pokedex extends Component {
                                     <Button 
                                     color="danger"
                                     onClick = {() => {
-                                        var i = pokemons.indexOf( p );
-                                        pokemons.splice( i, 1 );
-                                        console.log(pokemons)
+                                        var index = pokemons.indexOf( p );
                                         console.log("Has borrado " + p.name)
-                                        //return window.location.reload()
-                                    }}
-                                    onChange = {() => {   
+                                        this.props.deletePokemon({
+                                            pokemons,
+                                            index
+                                         })
                                     }}
                                     >Delete</Button>
                                 </li>
